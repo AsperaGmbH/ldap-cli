@@ -23,7 +23,7 @@ public class LdapConnectionTestCommand implements CommandRunnable {
             LdapSystem.getInstance().initialize();
             String hostname = LdapSystem.getInstance().getValue("hostname");
             String port = LdapSystem.getInstance().getValue("port");
-            String securityPrincipal = LdapSystem.getInstance().getValue("security-prinical");
+            String securityPrincipal = LdapSystem.getInstance().getValue("security-principal");
             String password = LdapSystem.getInstance().getValue("password");
             boolean ssl = LdapSystem.getInstance().getValue("ssl").contains("true") ? true : false;
             Properties env = new Properties();

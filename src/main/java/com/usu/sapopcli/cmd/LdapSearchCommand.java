@@ -32,7 +32,7 @@ public class LdapSearchCommand implements CommandRunnable {
             LdapSystem.getInstance().initialize();
             String hostname = LdapSystem.getInstance().getValue("hostname");
             String port = LdapSystem.getInstance().getValue("port");
-            String securityPrincipal = LdapSystem.getInstance().getValue("security-prinical");
+            String securityPrincipal = LdapSystem.getInstance().getValue("security-principal");
             String password = LdapSystem.getInstance().getValue("password");
             boolean ssl = LdapSystem.getInstance().getValue("ssl").contains("true") ? true : false;
             Properties env = new Properties();
@@ -86,7 +86,7 @@ public class LdapSearchCommand implements CommandRunnable {
                         long runtime = System.currentTimeMillis() - now;
                         userCount++;
                         LOGGER.info("Query " + runtime +  " ms executed time: usercount selected users => " + userCount);
-                        LOGGER.info("### LDAP Search query was succesful. ####");
+                        LOGGER.info("### LDAP Search query was successful. ####");
                         return entry;
                     } else {
                         System.out.println("\n----- User count: " + userCount + " ---------");
@@ -113,7 +113,7 @@ public class LdapSearchCommand implements CommandRunnable {
             ctx.close();
             long runtime = System.currentTimeMillis() - now;
             LOGGER.info("Query " + runtime +  " ms executed time: usercount selected users => " + userCount);
-            LOGGER.info("### LDAP Search query was succesful. ####");
+            LOGGER.info("### LDAP Search query was successful. ####");
         } catch (NamingException | IOException e) {
             LOGGER.log(Level.SEVERE, "PagedSearch failed.", e);
         }

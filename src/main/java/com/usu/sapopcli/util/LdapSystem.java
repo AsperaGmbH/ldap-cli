@@ -70,7 +70,7 @@ public class LdapSystem {
                 ldapProperties.put("searchbase", "unknown");
                 ldapProperties.put("hostname", "unknown");
                 ldapProperties.put("port", "unknown");
-                ldapProperties.put("security-prinical", "unknown");
+                ldapProperties.put("security-principal", "unknown");
                 ldapProperties.put("password", "unknown");
                 ldapProperties.put("ssl", "false");
                 
