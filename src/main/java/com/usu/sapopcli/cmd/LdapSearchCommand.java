@@ -16,6 +16,8 @@ import javax.naming.ldap.LdapContext;
 import javax.naming.ldap.PagedResultsControl;
 import javax.naming.ldap.PagedResultsResponseControl;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.usu.sapopcli.util.LdapSystem;
 
 public class LdapSearchCommand implements CommandRunnable {
@@ -49,8 +51,9 @@ public class LdapSearchCommand implements CommandRunnable {
             env.put(Context.SECURITY_CREDENTIALS, password);
             env.put("com.sun.jndi.ldap.read.timeout", "5000");
             env.put("com.sun.jndi.ldap.connect.timeout", "1000");
-
-            getAllUsers(env, CommandContext.getInstance().nextArgument());
+            String userName = CommandContext.getInstance().nextArgument();
+            String searchBaseOverride = CommandContext.getInstance().nextArgument();
+            getAllUsers(env, userName, searchBaseOverride);
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, "#### Connection FAILED! ####");
             LOGGER.log(Level.SEVERE, e.getMessage(), e);
@@ -58,7 +61,7 @@ public class LdapSearchCommand implements CommandRunnable {
 
     }
 
-    private static SearchResult getAllUsers(Properties env, String sAMAccountName) {
+    private static SearchResult getAllUsers(Properties env, String sAMAccountName, String searchBaseOverride) {
         try {
             LdapContext ctx = new InitialLdapContext(env, null);
             long now = System.currentTimeMillis();
@@ -68,13 +71,15 @@ public class LdapSearchCommand implements CommandRunnable {
             do {
 
                 NamingEnumeration<SearchResult> results = null;
+                SearchControls sc = new SearchControls();
+                sc.setSearchScope(SearchControls.SUBTREE_SCOPE);
+                String searchBase = StringUtils.isNotEmpty(searchBaseOverride) ? searchBaseOverride
+                        : LdapSystem.getInstance().getValue("searchbase");
                 if (sAMAccountName != null && sAMAccountName.equals("*")) {
-                    results = ctx.search(LdapSystem.getInstance().getValue("searchbase"),
-                            "(&(objectClass=user)(!(objectClass=computer)))", new SearchControls());
+                    results = ctx.search(searchBase, "(&(objectClass=user)(!(objectClass=computer)))", sc);
                 } else {
-                    results = ctx.search(LdapSystem.getInstance().getValue("searchbase"),
-                            "(&(objectClass=user)(sAMAccountName={0}))", new Object[] { sAMAccountName },
-                            new SearchControls());
+                    results = ctx.search(searchBase, "(&(objectClass=user)(sAMAccountName={0}))",
+                            new Object[] { sAMAccountName }, sc);
                 }
 
                 while (results != null && results.hasMore()) {
@@ -85,7 +90,7 @@ public class LdapSearchCommand implements CommandRunnable {
                         System.out.println(entry.getAttributes().get("givenName"));
                         long runtime = System.currentTimeMillis() - now;
                         userCount++;
-                        LOGGER.info("Query " + runtime +  " ms executed time: usercount selected users => " + userCount);
+                        LOGGER.info("Query " + runtime + " ms executed time: usercount selected users => " + userCount);
                         LOGGER.info("### LDAP Search query was successful. ####");
                         return entry;
                     } else {
@@ -112,7 +117,7 @@ public class LdapSearchCommand implements CommandRunnable {
             } while (cookie != null);
             ctx.close();
             long runtime = System.currentTimeMillis() - now;
-            LOGGER.info("Query " + runtime +  " ms executed time: usercount selected users => " + userCount);
+            LOGGER.info("\n\nQuery " + runtime + " ms executed time: usercount selected users => " + userCount);
             LOGGER.info("### LDAP Search query was successful. ####");
         } catch (NamingException | IOException e) {
             LOGGER.log(Level.SEVERE, "PagedSearch failed.", e);
