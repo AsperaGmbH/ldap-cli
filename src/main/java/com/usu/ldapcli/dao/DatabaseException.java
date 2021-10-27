@@ -3,25 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.usu.sapopcli.cmd;
+package com.usu.ldapcli.dao;
 
 /**
  *
  * @author daniel
  */
-public class CommandException extends Exception {
-    
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 8730754063101789715L;
+public class DatabaseException extends Exception {
 
-	public CommandException(String message) {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 8730754063101789715L;
+
+    public DatabaseException(String message) {
         super(message);
     }
 
-    public CommandException(String message, Throwable cause) {
+    public DatabaseException(String message, Throwable cause) {
         super(message, cause);
     }
-    
+
 }

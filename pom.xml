@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.usu</groupId>
-	<artifactId>sapop_cli</artifactId>
+	<artifactId>ldap-cli</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<properties>
@@ -115,7 +115,7 @@
 					<!-- MainClass in mainfest make a executable jar -->
 					<archive>
 						<manifest>
-							<mainClass>com.usu.sapopcli.main.MainStart</mainClass>
+							<mainClass>com.usu.ldapcli.main.MainStart</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

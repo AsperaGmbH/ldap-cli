@@ -1,6 +1,6 @@
-# sapopcli
+# ldap-cli
 
-The application sapopcli is a command line interface (CLI) application.
+The application ldapcli is a command line interface (CLI) application.
 
 ###  List of commands:
 
@@ -22,4 +22,4 @@ The application sapopcli is a command line interface (CLI) application.
 
 - Clone the project
 - Build the project with maven
-- Start application with: java -jar target/sapopcli-x.x.x-XYZ-jar-with-dependencies.jar
+- Start application with: java -jar target/ldapcli-x.x.x-XYZ-jar-with-dependencies.jar

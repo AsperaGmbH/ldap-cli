@@ -1,4 +1,4 @@
-package com.usu.sapopcli.util;
+package com.usu.ldapcli.util;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,7 +21,7 @@ public class LdapSystem {
     private static LdapSystem ldap;
     private static Properties ldapProperties;
     private static final Logger LOGGER = Logger.getLogger(LdapSystem.class.getName());
-    public final static String PROJECT_NAME = "sapopcli";
+    public final static String PROJECT_NAME = "ldapcli";
 
     /**
      * Privater leerer Standardkonstruktor.
@@ -74,7 +74,7 @@ public class LdapSystem {
                 ldapProperties.put("password", "unknown");
                 ldapProperties.put("ssl", "false");
                 
-                ldapProperties.store(fileOut, "sapopcli ldap");
+                ldapProperties.store(fileOut, "ldap-cli");
                 fileOut.close();
             }
             ldap.ldapProperties.load(new FileInputStream(fileName));

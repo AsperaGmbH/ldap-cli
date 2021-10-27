@@ -1,4 +1,4 @@
-package com.usu.sapopcli.dao;
+package com.usu.ldapcli.dao;
 
 import java.util.List;
 import java.util.Locale;
@@ -7,8 +7,8 @@ import java.util.logging.Logger;
 
 import javax.persistence.Query;
 
-import com.usu.sapopcli.dto.Config;
-import com.usu.sapopcli.util.ValidationHelper;
+import com.usu.ldapcli.dto.Config;
+import com.usu.ldapcli.util.ValidationHelper;
 
 /**
  *

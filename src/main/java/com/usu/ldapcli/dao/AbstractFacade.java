@@ -1,4 +1,4 @@
-package com.usu.sapopcli.dao;
+package com.usu.ldapcli.dao;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import com.usu.sapopcli.util.ValidationHelper;
+import com.usu.ldapcli.util.ValidationHelper;
 
 /**
  *

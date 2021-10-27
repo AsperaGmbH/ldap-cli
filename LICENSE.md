@@ -1,8 +1,8 @@
 # License
 
-__sapopcli__  is licensed under the MIT License.
+__ldap-cli__  is licensed under the MIT License.
 
-Copyright for all further modifications (c) 2021 geramaya@gmail.com
+Copyright for all further modifications (c) 2021 USU AG
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

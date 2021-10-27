@@ -1,4 +1,4 @@
-package com.usu.sapopcli.util;
+package com.usu.ldapcli.util;
 
 import java.util.Set;
 import java.util.logging.Level;

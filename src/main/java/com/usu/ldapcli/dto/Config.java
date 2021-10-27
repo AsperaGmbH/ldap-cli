@@ -1,4 +1,4 @@
-package com.usu.sapopcli.dto;
+package com.usu.ldapcli.dto;
 
 import java.io.Serializable;
 

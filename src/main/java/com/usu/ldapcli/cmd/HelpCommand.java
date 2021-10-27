@@ -1,4 +1,4 @@
-package com.usu.sapopcli.cmd;
+package com.usu.ldapcli.cmd;
 
 public class HelpCommand implements CommandRunnable {
 

@@ -1,4 +1,4 @@
-package com.usu.sapopcli.cmd;
+package com.usu.ldapcli.cmd;
 
 public class QuitCommand implements CommandRunnable {
 

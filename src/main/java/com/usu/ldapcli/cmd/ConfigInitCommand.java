@@ -1,13 +1,13 @@
-package com.usu.sapopcli.cmd;
+package com.usu.ldapcli.cmd;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.usu.sapopcli.dao.ConfigFacade;
-import com.usu.sapopcli.dao.DatabaseException;
-import com.usu.sapopcli.dto.Config;
+import com.usu.ldapcli.dao.ConfigFacade;
+import com.usu.ldapcli.dao.DatabaseException;
+import com.usu.ldapcli.dto.Config;
 
 public class ConfigInitCommand implements CommandRunnable {
 

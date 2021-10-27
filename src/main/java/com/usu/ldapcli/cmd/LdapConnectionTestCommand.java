@@ -1,4 +1,4 @@
-package com.usu.sapopcli.cmd;
+package com.usu.ldapcli.cmd;
 
 import java.util.Properties;
 import java.util.logging.Level;
@@ -8,7 +8,7 @@ import javax.naming.Context;
 import javax.naming.ldap.InitialLdapContext;
 import javax.naming.ldap.LdapContext;
 
-import com.usu.sapopcli.util.LdapSystem;
+import com.usu.ldapcli.util.LdapSystem;
 
 public class LdapConnectionTestCommand implements CommandRunnable {
     private static final Logger LOGGER = Logger.getLogger(LdapConnectionTestCommand.class.getName());

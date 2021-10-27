@@ -1,4 +1,4 @@
-package com.usu.sapopcli.util;
+package com.usu.ldapcli.util;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,7 +24,7 @@ public class Resources {
     private static Resources resources;
     private static Properties systemProperties;
     private static final Logger LOGGER = Logger.getLogger(Resources.class.getName());
-    public final static String PROJECT_NAME = "sapopcli";
+    public final static String PROJECT_NAME = "ldapcli";
 
     /**
      * Privater leerer Standardkonstruktor.
@@ -35,7 +35,7 @@ public class Resources {
     }
 
     /**
-     * Liefert eine statische Instanz f�r die Ressourcen.
+     * Liefert eine statische Instanz fuerr die Ressourcen.
      *
      * @return die Ressourcen.
      */
@@ -54,7 +54,7 @@ public class Resources {
     private static void initializeResources() {
         try {
             resources = new Resources();
-            String environmentSetting = System.getProperty("com.usu.sapopcli.env");
+            String environmentSetting = System.getProperty("com.usu.ldapcli.env");
 
             if (environmentSetting == null || environmentSetting.length() == 0) {
                 environmentSetting = "dev";
@@ -67,11 +67,11 @@ public class Resources {
             String fileName = null;
             String filePath = null;
             if (SystemUtils.IS_OS_WINDOWS) {
-                fileName = System.getProperty("user.home") + "\\." + PROJECT_NAME + "\\sapopcli_" + environmentSetting
+                fileName = System.getProperty("user.home") + "\\." + PROJECT_NAME + "\\ldapcli_" + environmentSetting
                         + ".properties";
                 filePath = System.getProperty("user.home") + "\\." + PROJECT_NAME + "";
             } else {
-                fileName = System.getProperty("user.home") + "/." + PROJECT_NAME + "/sapopcli_" + environmentSetting
+                fileName = System.getProperty("user.home") + "/." + PROJECT_NAME + "/ldapcli_" + environmentSetting
                         + ".properties";
                 filePath = System.getProperty("user.home") + "/." + PROJECT_NAME;
             }
@@ -90,11 +90,11 @@ public class Resources {
                 SecureRandom random = new SecureRandom();
                 final String dbPassword = new BigInteger(130, random).toString(32);
 
-                systemProperties.put("db-user", "locapp");
+                systemProperties.put("db-user", "ldapcli");
                 systemProperties.put("db-password", dbPassword);
-                systemProperties.put("db-name", "locapp-db");
+                systemProperties.put("db-name", "ldapcli-db");
                 systemProperties.put("userPath", filePath);
-                systemProperties.store(fileOut, "sapopcli Application Config");
+                systemProperties.store(fileOut, "ldapcli application config");
                 fileOut.close();
             }
             resources.systemProperties.load(new FileInputStream(fileName));

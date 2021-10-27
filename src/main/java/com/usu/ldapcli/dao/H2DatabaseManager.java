@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.usu.sapopcli.dao;
+package com.usu.ldapcli.dao;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.usu.sapopcli.util.Resources;
+import com.usu.ldapcli.util.Resources;
 
 /**
  * Der H2DatabaseManager ist ein Singleton zur Verwendung der lokalen JPA

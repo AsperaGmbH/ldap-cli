@@ -1,4 +1,4 @@
-package com.usu.sapopcli.main;
+package com.usu.ldapcli.main;
 
 import java.awt.Font;
 import java.awt.Graphics;
@@ -17,11 +17,11 @@ import javax.imageio.ImageIO;
 
 import org.h2.tools.Server;
 
-import com.usu.sapopcli.cmd.CommandContext;
-import com.usu.sapopcli.cmd.CommandException;
-import com.usu.sapopcli.dao.H2DatabaseManager;
-import com.usu.sapopcli.util.LdapSystem;
-import com.usu.sapopcli.util.Resources;
+import com.usu.ldapcli.cmd.CommandContext;
+import com.usu.ldapcli.cmd.CommandException;
+import com.usu.ldapcli.dao.H2DatabaseManager;
+import com.usu.ldapcli.util.LdapSystem;
+import com.usu.ldapcli.util.Resources;
 
 /**
  * The main class to start the application.
@@ -111,7 +111,7 @@ public class MainStart {
         Graphics2D graphics = (Graphics2D) g;
         graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
         // the banner text may affect width and height
-        graphics.drawString("SAPOP CLI", 6, 24);
+        graphics.drawString("LDAP CLI", 6, 24);
         ImageIO.write(image, "png", File.createTempFile("AsciiBanner.png", null));
 
         // need to adjust for width and height

@@ -1,4 +1,4 @@
-package com.usu.sapopcli.cmd;
+package com.usu.ldapcli.cmd;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -18,7 +18,7 @@ import javax.naming.ldap.PagedResultsResponseControl;
 
 import org.apache.commons.lang.StringUtils;
 
-import com.usu.sapopcli.util.LdapSystem;
+import com.usu.ldapcli.util.LdapSystem;
 
 public class LdapSearchCommand implements CommandRunnable {
     private static final Logger LOGGER = Logger.getLogger(LdapSearchCommand.class.getName());

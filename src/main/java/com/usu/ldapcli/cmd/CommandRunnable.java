@@ -1,4 +1,4 @@
-package com.usu.sapopcli.cmd;
+package com.usu.ldapcli.cmd;
 
 /**
  * This standard Command interface is used to define a run method for all

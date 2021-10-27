@@ -1,4 +1,4 @@
-package com.usu.sapopcli.cmd;
+package com.usu.ldapcli.cmd;
 
 import java.io.InputStream;
 import java.io.OutputStream;

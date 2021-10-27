@@ -1,4 +1,4 @@
-package com.usu.sapopcli.cmd;
+package com.usu.ldapcli.cmd;
 
 import java.util.HashMap;
 import java.util.LinkedList;
